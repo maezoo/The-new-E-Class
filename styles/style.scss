@@ -1,0 +1,88 @@
+@import "./reset.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+
+.old-standard-tt-bold {
+    font-family: "Old Standard TT", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.old-standard-tt-regular {
+    font-family: "Old Standard TT", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BookkMyungjo-Bd';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+}
+
+
+body {
+    font-family: 'BookkMyungjo-Bd';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.wrap {
+    height: 80vh;
+    width: 70%;
+    background-color: black;
+    color: white;
+
+    .container {
+        height: 100%;
+        display: grid;
+        grid-template-rows: 1.5fr .5fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+        .title {
+            grid-row: 1 / 1;
+            grid-column: span 8;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+
+            h1 {
+                @extend.old-standard-tt-bold;
+
+                font-size: 105px;
+            }
+
+            p {
+                padding-left: 630px;
+            }
+        }
+
+        .menu {
+            grid-row: 2 / 3;
+            grid-column: 1 / 8;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            align-items: center;
+            justify-items: center;
+            border: 1px solid white;
+
+            div {}
+        }
+    }
+
+}
