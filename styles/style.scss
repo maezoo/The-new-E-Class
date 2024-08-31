@@ -21,8 +21,6 @@
     font-style: normal;
 }
 
-
-
 * {
     box-sizing: border-box;
 }
@@ -38,6 +36,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-color: black;
 }
 
 .wrap {
@@ -49,11 +48,12 @@ body {
     .container {
         height: 100%;
         display: grid;
-        grid-template-rows: 1.4fr .5fr 1fr 1fr 1fr;
+        grid-template-rows: 1.4fr 0.5fr 1fr .5fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 
         .title {
             grid-row: 1 / 1;
+
             grid-column: span 8;
             display: flex;
             align-items: center;
@@ -73,16 +73,33 @@ body {
         }
 
         .menu {
-            grid-row: 2 / 3;
+            grid-row: 2 / 4;
             grid-column: 1 / 8;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-            align-items: center;
-            justify-items: center;
-            border: 1px solid white;
+            grid-template-rows: .5fr .5fr;
+            border-top: 1px solid white;
 
+            div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-bottom: 1px solid white;
+
+            }
+
+            div:not(:last-child) {
+                border-right: 1px solid white;
+            }
+
+            .image-box {
+                grid-column: span 2;
+                grid-row: span 2;
+                background: url(../images/benz-1.png) no-repeat 52% 50%;
+                background-size: 450px;
+                margin: 15px;
+            }
         }
-
 
         .subject {
             grid-row: 4/5;
@@ -91,24 +108,31 @@ body {
             grid-template-columns: .4fr .6fr .6fr .6fr .4fr;
             grid-template-rows: .5fr;
 
+            div {
+                border-top: 1px solid white;
+                border-bottom: 1px solid white;
+                display: flex;
+                justify-content: center;
+            }
+
+            div:not(:last-child) {
+                border-right: 1px solid white;
+            }
+
             .sub-img-box1 {
                 grid-column: 1/2;
-                background-color: yellow;
             }
 
             .sub-box {
                 display: flex;
                 flex-direction: column;
                 gap: 8px;
-                padding: 10px;
-
+                padding: 12px;
             }
 
             .exterior {
                 grid-column: 2/3;
-
             }
-
 
             .interior {
                 grid-column: 3/4;
@@ -117,7 +141,6 @@ body {
 
             .manufaktur {
                 grid-column: 4/5;
-
             }
 
             p {
@@ -130,11 +153,71 @@ body {
 
             .sub-img-box2 {
                 grid-column: 5/6;
-                background-color: tomato;
             }
         }
 
+        .footer {
+            grid-row: 5/7;
+            grid-column: 1/8;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            // grid-template-rows: 1fr 1fr;
+            // background-color: antiquewhite;
+
+            div {
+                display: flex;
+                flex-direction: column;
+
+                justify-content: center;
+
+                padding: 10px;
+
+                h6 {
+                    font-size: 14px;
+                }
+
+                h4 {
+                    font-size: 20px;
+                }
+
+                h5 {
+                    font-size: 25px;
+                }
+
+                span {
+                    font-size: 16px;
+
+                }
+
+                .span-size {
+                    font-size: 20px;
+                }
+
+                p {
+                    font-size: 14px;
+                }
+            }
+
+            .character-1 {
+                grid-column: 6/7;
+                grid-row: 1/2;
+            }
+
+            .character-2 {
+                grid-column: 7/8;
+                grid-row: 1/2;
+            }
+
+            .character-3 {
+                grid-column: 6/7;
+                grid-row: 2/3;
+            }
+
+            .character-4 {
+                grid-column: 7/8;
+                grid-row: 2/3;
+            }
+        }
 
     }
-
 }
