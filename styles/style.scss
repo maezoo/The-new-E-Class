@@ -27,48 +27,95 @@ $gray: #d9d9d9a7;
     box-sizing: border-box;
 }
 
-
-
-// .bar {
-//     width: 80%;
-//     background-color: red;
-//     height: 90vh;
-// }
-
 body {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     background-color: rgb(202, 202, 202);
+
 }
 
 .wrap {
-    height: 70vh;
+    height: 85vh;
     width: 60%;
-    background-color: black;
     color: white;
-    border: 1px solid white;
+    display: grid;
+    grid-template-columns: 30px 1fr 30px;
+    grid-template-rows: 30px 1fr 30px;
+    // background-color: tomato;
+    background-color: #737478;
+    border-radius: 30px;
+    border: 3px solid white;
 
-    .container {
+    .bar {
+        font-size: 14px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        span {
+            position: absolute;
+            width: max-content;
+        }
+    }
+
+    .bar-top {
+        grid-row: 1 / 2;
+        grid-column: 1 / 3;
+    }
+
+    .bar-left {
+        grid-row: 2 / 4;
+        grid-column: 1 / 2;
+
+        span {
+            transform: rotateZ(270deg);
+        }
+
+    }
+
+    .bar-right {
+        grid-row: 1 / 3;
+        grid-column: 3 / 4;
+
+        span {
+            transform: rotateZ(270deg);
+        }
+    }
+
+    .bar-bottom {
+        grid-row: 3 / 4;
+        grid-column: 2 / 4;
+    }
+
+
+    .main {
+        // background-color: $gray;
+
+        border: 3px solid white;
+        border-radius: 15px;
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
         height: 100%;
         display: grid;
-        grid-template-rows: 1.5fr 1.3fr .7fr 1.8fr;
+        grid-template-rows: 2fr 1.7fr .6fr 2.5fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-
+        background-color: black;
 
         .title {
-            grid-row: 1 / 1;
+            grid-row: 1 / 2;
             grid-column: span 8;
             display: flex;
             flex-direction: column;
             margin: auto;
 
-
             h1 {
                 padding-top: 9px;
                 @extend.old-standard-tt-bold;
-                font-size: 90px;
+                font-size: 85px;
             }
 
             p {
@@ -96,6 +143,8 @@ body {
                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
                 align-items: center;
                 justify-items: center;
+                // overflow: hidden;
+
 
                 li {
                     // border-right: 1px solid white;
@@ -132,26 +181,22 @@ body {
                             height: 13px;
                         }
                     }
-
-
                 }
-
             }
         }
 
         .image-box {
             grid-row: 2 / 3;
             grid-column: 4 / 5;
-            background: url(../images/benz-car.jpeg) no-repeat 0% 0%;
-            background-size: 220px 150px;
+            background: yellow url(../images/benz-car.jpeg) no-repeat 50% 10%;
+            background-size: 240px 160px;
             border-top: 1px solid white;
 
         }
 
         .subject {
             background-color: $gray;
-
-            grid-row: 3/4;
+            grid-row: 3 / 4;
             grid-column: 1/5;
             display: grid;
             grid-template-columns: .6fr .6fr .6fr;
@@ -201,31 +246,31 @@ body {
 
         .footer {
             background-color: $gray;
-
-            grid-row: 4/5;
+            grid-row: 4 / 5;
             grid-column: 1 / 5;
             display: grid;
             grid-template-rows: .5fr .5fr .5fr .5fr;
-            grid-template-columns: 4fr 2.5fr 1.5fr 1.5fr;
-
+            grid-template-columns: 4fr 2.5fr 1.8fr 1.8fr;
+            border-radius: 0 0 0 15px;
 
             div:not(:nth-child(7), :last-child) {
                 border-right: 1px solid white;
             }
 
-
             .image-box2 {
                 grid-row: 1 / 5;
                 grid-column: 1 / 2;
                 background: url(../images/benz-1.png) no-repeat 55% 60%;
-                background-size: 600px;
+                background-size: 450px;
+                border-radius: 0 0 0 10px;
+
             }
 
             .box {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                padding: 0 17px;
+                padding: 0 15px;
                 font-size: 20px;
 
                 img {
@@ -239,7 +284,6 @@ body {
             .box:not(:nth-child(5)) {
                 border-bottom: 1px solid white;
             }
-
 
             .box1 {
                 grid-row: 1 / 2;
@@ -296,13 +340,10 @@ body {
                 border-bottom: 1px solid white;
             }
 
-
             .char-box2 {
                 grid-column: 4/ 5;
                 grid-row: 1 / 3;
                 border-bottom: 1px solid white;
-
-
             }
 
             .char-box3 {
@@ -315,6 +356,7 @@ body {
                 grid-row: 3 / 5;
             }
         }
-
     }
+
+
 }
